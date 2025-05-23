@@ -1,23 +1,23 @@
-'use strict';
+"use strict";
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  up: async (queryInterface, Sequelize)=>{
-    await queryInterface.createTable('Projects',{
-      id:{
-        type:Sequelize.INTEGER,
-        primaryKey:true,
-        autoIncrement:true
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable("Projects", {
+      id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
       },
       employeeId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'Employees',
+          model: "Employees",
           key: "id",
         },
-        onDelete: 'CASCADE',
-        onUpdate:'CASCADE'
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       task: {
         type: Sequelize.STRING,
@@ -26,11 +26,11 @@ module.exports = {
       status: {
         type: Sequelize.STRING,
         allowNull: false,
-      }
-    })
+      },
+    });
   },
 
-  async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('Projects');
-  }
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable("Projects");
+  },
 };

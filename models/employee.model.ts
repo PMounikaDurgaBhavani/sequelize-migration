@@ -29,19 +29,19 @@ Employee.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    age:{
-      type:DataTypes.INTEGER,
-      allowNull:true
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
     salary: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    status:{
-      type:DataTypes.STRING,
-      allowNull:false,
-      defaultValue:"Active"
-    }
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "Active",
+    },
   },
   {
     sequelize,
